@@ -1,16 +1,80 @@
-# React + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive weather application built as a frontend development project.
 
-Currently, two official plugins are available:
+The project is currently in its UI prototype stage. The initial version is built with HTML, CSS, and JavaScript. The next stage will rebuild the application with React, TypeScript, and Tailwind CSS and connect it to the Open-Meteo API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> The visual design is still subject to change during development.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Current weather interface
+- Hourly forecast carousel
+- Weekly forecast carousel
+- Weather details
+- Air quality
+- Marine weather
+- Historical weather
+- Location management
+- Settings
+- Responsive layout
+- Mouse and touch interactions
 
-## Expanding the ESLint configuration
+## Roadmap
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [x] Build the initial UI prototype
+- [x] Create responsive layouts
+- [x] Implement forecast carousels
+- [x] Build weather information sections
+- [ ] Rebuild with React
+- [ ] Add TypeScript
+- [ ] Add Tailwind CSS
+- [ ] Integrate Open-Meteo API
+- [ ] Add location search and geolocation
+- [ ] Add Persian / English support
+- [ ] Add weather charts
+- [ ] Add loading and error states
+
+## Tech Stack
+
+### Current
+
+- HTML
+- CSS
+- JavaScript
+- Git
+
+### Planned
+
+- React
+- TypeScript
+- Tailwind CSS
+- Open-Meteo API
+
+---
+
+## Project Goal
+
+The main goal of this project is not only to build a weather application, but to use it as the first step in a structured development journey.
+
+The project starts with a static UI built with Vanilla JavaScript and gradually evolves into a functional React application.
+
+The larger learning path is:
+
+**Vanilla JavaScript → React → Full-Stack Development**
+
+---
+
+## API
+
+Weather data will be provided by **Open-Meteo** in the functional version.
+
+- [Open-Meteo](https://open-meteo.com/)
+
+---
+
+## Status
+
+🚧 **In Development**
+
+The current version represents the initial UI prototype. The next major stage is rebuilding the application with React, Tailwind CSS, TypeScript, and Open-Meteo.

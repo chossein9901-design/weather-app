@@ -1,184 +1,321 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-}
-
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
+.container{
     position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
-
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
     display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+    flex-direction: row;
+    top: 0;left: 0px;
+    width: 100vw;
+    height: 100vh;
+    transition: all ease-in-out 0.5s;
+    background-color: antiquewhite;
 }
-
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.container.is-open{
+    left: -400px;
+    box-shadow: inset -1px 0 30px rgba(0,0,0,0.6);
 }
-
-.ticks {
-  position: relative;
-  width: 100%;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
+.container.setting-open{
+    left: 400px;
+    box-shadow: inset 1px 0em 30px rgba(0,0,0,0.6);
+}
+/* ---------- Setting Menu Section ---------- */
+.setting-menu{
+    position: fixed;
+    top: 0;left: -400px;
+    background-color: bisque;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px !important;
+    transition: left ease-in-out 0.5s;
+}
+.setting-menu.setting-open{
     left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
+}
+.setting-menu .header{
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+.setting-menu .contain{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.change-lang,
+.change-units{
+    padding: 1.25rem 2rem;
+}
+.change-lang div,
+.change-units div{
+    margin: 1rem;
+}
+.setting-menu button{
+    margin: 0 auto;
+    width: 90%;
+}
+/* ---------- Location Menu Section ---------- */
+.location-mgt{
+    position: fixed;
+    top: 0;right: -400px;
+    background-color: bisque;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px !important;
+    transition: right ease-in-out 0.5s;
+}
+.location-mgt.is-open{
     right: 0;
-    border-right-color: var(--border);
-  }
+}
+.location-mgt .header{
+    height: 7vh;
+}
+.location-mgt form{
+    width: 100%;height: 100%;
+    padding: 1rem;
+    position: relative;
+}
+.location-mgt input{
+    padding: 1rem;
+    width: 100%;height: 100%; 
+}
+.location-mgt label{
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-40%);
+}
+.locations{
+    height: 100%;
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.location{
+    padding: 1rem;
+}
+.btns{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    justify-content: space-between;
+    background-color: bisque;
+}
+.add-location,
+.manage-location{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    white-space: nowrap;
+    font-weight: bold;
+}
+.card{
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #111;
+    border-radius: 16px;
+    box-shadow: 0 3px 0 #111;
+}
+/* ---------- Main Section ---------- */
+.forecast{
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+/* ----- Navigation ----- */
+nav{
+    top: 0;left: 0;
+    width: 100%;
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    z-index: 10000;
+    box-shadow: 0 1px 30px rgba(0,0,0,0.06);
+}
+.menu-btn{
+    width: 2.5rem;height: 2.5rem;
+}
+.menu-btn .menu{
+    border: none;
+    position: relative;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;height: 100%;
+}
+.menu-btn .line{
+    position: absolute;
+    background-color: #111;
+    border: 1px solid #111;
+    height: 15%;
+    border-radius: 3px;
+    transform: translate(-50%, -50%);
+    transition: all ease-in-out 0.25s;
+}
+.line-1{
+    width: 75%;
+    top: 25%;left: 35%;
+}
+.line-2{
+    width: 100%;
+    top: 50%;left: 50%;
+}
+.line-3{
+    width: 75%;
+    top: 75%;left: 65%;
+}
+.menu:hover .line,
+.menu.is-open .line{
+    width: 100%;
+    left: 50%;
+}
+.menu.is-open .line-3{
+    transform: 
+        translate(-50%, -300%)
+        rotate(45deg);
+}
+.menu.is-open .line-1{
+    transform: 
+        translate(-50%, 50%)
+        rotate(-45deg);
+}
+.menu.is-open .line-2{
+    width: 0px;
+    border: 0px solid #fff;
+}
+.menu:hover{
+    cursor: pointer;
+}
+.setting{
+    border: none;
+    background:none ;
+    transition: all ease-in-out 0.25s;
+}
+.setting:hover,
+.setting.setting-open{
+    transform: rotate(40deg);
+}
+/* ---------- Showing Forecast Section ---------- */
+.current-location{
+    margin: 0 auto;
+}
+.current-situation{
+    position: relative;
+    min-height: 100vh;
+}
+.current-condition,
+.current-temperature,
+.minmax-temp, .details{
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+.current-temperature{
+    margin-top: 5rem;
+    font-size: 5rem;
+}
+.details{
+    display: flex;
+    gap: 5rem;
+    margin-top: 3rem;
+}
+.forecast-details{
+    margin-top: 15rem;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+.hourly-forecast,
+.weekly-forecast{
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+}
+.hourly-forecast::-webkit-scrollbar ,
+.weekly-forecast::-webkit-scrollbar {
+  display: none;
+}
+.hourly-forecast.dragging,
+.weekly-forecast.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+.hf-card, .wf-card{
+    justify-items: center;
+    align-items: center;
+    font-size: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    flex: 0 0 150px;
+    min-height: 200px;
+}
+.wf-card{
+    flex: 0 0 350px;
+    min-height: 300px;
+}
+/* ---------- Weather Details Section ---------- */
+.weather-details,
+.air-quality,
+.marine-weather{
+    width: 100%;
+}
+.wd-container,
+.aq-container,
+.mw-container{
+    width: 75%;
+    margin: 0 auto;
+}
+.wd-title{
+    text-align: center;
+}
+.wd-container ul,
+.aq-container ul,
+.mw-container ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.wd-container li,
+.aq-container li,
+.mw-container li{
+    white-space: nowrap;
+    text-align: left;
+    justify-content: left;
+}
+.wd-container h4,
+.aq-container h4,
+.mw-container h4{
+    padding: 1rem 2rem;
 }
